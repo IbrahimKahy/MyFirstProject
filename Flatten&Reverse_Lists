@@ -1,0 +1,16 @@
+# This code efficiently converts nested lists of various dimensions into a single flattened list while maintaining their original structure.
+# sample input: [[1,'a',['cat'],2],[[[3]],'dog'],4,5]
+# sample output: [1,'a','cat',2,3,'dog',4,5]
+def flatten_list(sample_list):
+
+    
+    flattened = []
+    
+    for element in sample_list:
+        if isinstance(element,list):
+            flattened.extend(flatten_list(element))
+            
+        else:
+            flattened.append(element)
+    
+    return flattened
