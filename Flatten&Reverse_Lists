@@ -1,3 +1,4 @@
+# Task-1
 # This code efficiently converts nested lists of various dimensions into a single flattened list while maintaining their original structure.
 # sample input: [[1,'a',['cat'],2],[[[3]],'dog'],4,5]
 # sample output: [1,'a','cat',2,3,'dog',4,5]
@@ -14,3 +15,20 @@ def flatten_list(sample_list):
             flattened.append(element)
     
     return flattened
+
+
+# Task-2
+# This code reverses the elements of the given list. If the elements within the list also contain lists, it reverses those as well.
+# sample input: [[1, 2], [3, 4], [5, 6, 7]]
+# sample output: [[[7, 6, 5], [4, 3], [2, 1]]
+
+def reverse_list(sample_list_2):
+    reversed_list = []
+    for element in sample_list_2[::-1]:
+        if isinstance(element,list):
+            reversed_list.append(reverse_list(element))
+        else:
+            reversed_list.append(element)
+            
+    return reversed_list        
+
